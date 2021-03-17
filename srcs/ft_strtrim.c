@@ -6,92 +6,87 @@
 /*   By: anadege <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 16:42:48 by anadege           #+#    #+#             */
-/*   Updated: 2021/03/16 22:38:57 by elanna           ###   ########.fr       */
+/*   Updated: 2021/03/17 15:38:32 by elanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	ft_inside_set(char const c, char const *set)
+{
+	size_t	i;
+
+	i = 0;
+	while (set[i])
+	{
+		if (set[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 static size_t	ft_det_size(char const *s1, char const *set)
 {
 	size_t	occ;
+	size_t	size;
 	size_t	i;
-	size_t	j;
 
 	occ = 0;
 	i = 0;
+	while (s1[i] && ft_inside_set(s1[i++], set))
+		occ++;
+	if (s1[i] == 0)
+		return (0);
 	while (s1[i])
-	{
-		j = 0;
-		while (set[j])
-		{
-			if (set[j] == s1[i])
-			{
-				occ++;
-				break ;
-			}
-			j++;
-		}
 		i++;
-	}
-	return (i - occ);
+	size = i;
+	i--;
+	while (ft_inside_set(s1[i--], set))
+		occ++;
+	return (size - occ);
 }
 
-static char		*ft_stralloc(char const *s1, char const *set)
+static char		*ft_stralloc(char const *s1, char const *set, size_t *size)
 {
-	size_t	size;
 	char	*s2;
 
-	size = 0;
 	if (s1 == NULL)
 		return (NULL);
 	else if (set == NULL)
 	{
-		while (s1[size])
-			size++;
-		if (!(s2 = malloc(sizeof(*s2) * (size + 1))))
+		while (s1[*size])
+			*size += 1;
+		if (!(s2 = malloc(sizeof(*s2) * (*size + 1))))
 			return (NULL);
 		return (s2);
 	}
-	size = ft_det_size(s1, set);
-	if (!(s2 = malloc(sizeof(*s2) * (size + 1))))
+	*size = ft_det_size(s1, set);
+	if (!(s2 = malloc(sizeof(*s2) * (*size + 1))))
 		return (NULL);
 	return (s2);
-}
-
-static void		ft_move_iterator(char const *s1, char const *set, size_t *i)
-{
-	size_t	j;
-
-	j = 0;
-	while (set && s1[*i] && set[j])
-	{
-		if (s1[*i] == set[j++])
-		{
-			j = 0;
-			*i += 1;
-		}
-	}
 }
 
 char			*ft_strtrim(char const *s1, char const *set)
 {
 	char	*s2;
 	size_t	i;
-	size_t	k;
+	size_t	j;
+	size_t	size;
 
+	size = 0;
+	s2 = ft_stralloc(s1, set, &size);
 	i = 0;
-	k = 0;
-	s2 = ft_stralloc(s1, set);
+	j = 0;
 	if (s2)
 	{
-		while (s1[i])
+		while (ft_inside_set(s1[i], set))
+			i ++;
+		while (j < size)
 		{
-			ft_move_iterator(s1, set, &i);
-			if (s1[i])
-				s2[k++] = s1[i++];
+			s2[j++] = s1[i++];
 		}
-		s2[k] = 0;
+		s2[size] = 0;
 	}
 	return (s2);
 }
