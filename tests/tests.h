@@ -1,10 +1,11 @@
 #ifndef TEST_H
 #define TEST_H
 
-#include <string.h>
 #include <malloc.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
 /* Si architecture linux et pas MAC */
 #ifdef linux
@@ -75,5 +76,16 @@ int	test_memset();
 int	test_bzero();
 int	test_memcpy();
 int	test_memccpy();
+int	test_memmove();
+int	test_memchr();
+int	test_memcmp();
+int	test_strlen();
+int	test_isalpha();
+int	test_isdigit();
+int	test_isalnum();
+int	test_isascii();
+int	test_isprint();
+int	test_toupper();
+int	test_tolower();
 
 #endif
