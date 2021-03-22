@@ -87,5 +87,14 @@ int	test_isascii();
 int	test_isprint();
 int	test_toupper();
 int	test_tolower();
+int	test_strchr();
+int	test_strrchr();
+int	test_strncmp();
+int	test_strlcpy();
+int	test_strlcat();
+int	test_strnstr();
+int	test_atoi();
+int	test_calloc();
+int	test_strdup();
 
 #endif

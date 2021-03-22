@@ -6,7 +6,7 @@
 /*   By: anadege <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 16:18:16 by anadege           #+#    #+#             */
-/*   Updated: 2021/03/17 11:18:09 by elanna           ###   ########.fr       */
+/*   Updated: 2021/03/22 15:55:17 by elanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ char		*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	l_len = 0;
-	if (big == NULL)
-		return (NULL);
-	if (little == NULL || little[0] == 0)
+	if (little[0] == 0)
 		return ((char *)big);
 	while (little[l_len])
 		l_len++;

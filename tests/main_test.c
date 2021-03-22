@@ -2,7 +2,7 @@
 
 int main()
 {
-	int i = 15;
+	int i = 24;
 	int j = 0;
 	t_test tests[i];
 
@@ -50,6 +50,33 @@ int main()
 	j++;
 	tests[j].name = "ft_tolower";
 	tests[j].res = test_tolower();
+	j++;
+	tests[j].name = "ft_strchr";
+	tests[j].res = test_strchr();
+	j++;
+	tests[j].name = "ft_strrchr";
+	tests[j].res = test_strrchr();
+	j++;
+	tests[j].name = "ft_strncmp";
+	tests[j].res = test_strncmp();
+	j++;
+	tests[j].name = "ft_strlcpy";
+	tests[j].res = test_strlcpy();
+	j++;
+	tests[j].name = "ft_strlcat";
+	tests[j].res = test_strlcat();
+	j++;
+	tests[j].name = "ft_strnstr";
+	tests[j].res = test_strnstr();
+	j++;
+	tests[j].name = "ft_atoi";
+	tests[j].res = test_atoi();
+	j++;
+	tests[j].name = "ft_calloc";
+	tests[j].res = test_calloc();
+	j++;
+	tests[j].name = "ft_strdup";
+	tests[j].res = test_strdup();
 
 	j = 0;
 	while (j < i)
