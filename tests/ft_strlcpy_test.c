@@ -2,8 +2,8 @@
 
 static int	test_4()
 {
-	char	s1[42];
-	char	s2[42];
+	char	s1[42] = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+	char	s2[42] = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	char	*str = "Strlcpy is less prone error";
 
 	printf("Test 4 : ");

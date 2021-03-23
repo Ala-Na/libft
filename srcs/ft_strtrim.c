@@ -6,7 +6,7 @@
 /*   By: anadege <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 16:42:48 by anadege           #+#    #+#             */
-/*   Updated: 2021/03/17 15:38:32 by elanna           ###   ########.fr       */
+/*   Updated: 2021/03/23 15:13:08 by elanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ char			*ft_strtrim(char const *s1, char const *set)
 	j = 0;
 	if (s2)
 	{
-		while (ft_inside_set(s1[i], set))
+		while (set && ft_inside_set(s1[i], set))
 			i ++;
 		while (j < size)
 		{

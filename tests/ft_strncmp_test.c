@@ -102,7 +102,9 @@ static int	test_4()
 	char	*s2 = "";
 
 	printf("Test 4 : ");
-	if (strncmp(s1, s2, 4) == ft_strncmp(s1, s2, 4)) {
+	int i = strncmp(s1, s2, 4);
+	int j = ft_strncmp(s1, s2, 4);
+	if (i == j) {
 		printf("ok\n");
 		return (0);
 	}
@@ -118,7 +120,9 @@ static int	test_3()
 	char	*s2 = "";
 
 	printf("Test 3 : ");
-	if (strncmp(s1, s2, strlen(s1)) == ft_strncmp(s1, s2, strlen(s1))) {
+	int i = strncmp(s1, s2, strlen(s1));
+	int j = ft_strncmp(s1, s2, strlen(s1));
+	if (i == j) {
 		printf("ok\n");
 		return (0);
 	}
@@ -134,7 +138,9 @@ static int	test_2()
 	char	*s2 = "Yolotrololo2";
 
 	printf("Test 2 : ");
-	if ((strncmp(s1, s2, strlen(s1))) == ft_strncmp(s1, s2, strlen(s1))) {
+	int i = strncmp(s1, s2, strlen(s1));
+	int j = ft_strncmp(s1, s2, strlen(s1));
+	if (i == j) {
 		printf("ok\n");
 		return (0);
 	}
@@ -150,7 +156,9 @@ static int	test_1()
 	char	*s2 = "Yolotralola";
 
 	printf("Test 1 : ");
-	if (strncmp(s1, s2, strlen(s1)) == ft_strncmp(s1, s2, strlen(s1))) {
+	int i = strncmp(s1, s2, strlen(s1));
+	int j = ft_strncmp(s1, s2, strlen(s1));
+	if (i == j) {
 		printf("ok\n");
 		return (0);
 	}

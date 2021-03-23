@@ -7,6 +7,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <unistd.h>
+#include <fcntl.h>
 
 /* Si architecture linux et pas MAC */
 #ifdef linux
@@ -90,6 +91,16 @@ int	test_strnstr();
 int	test_atoi();
 int	test_calloc();
 int	test_strdup();
+int	test_substr();
+int	test_strjoin();
+int	test_strtrim();
+int	test_split();
+int	test_itoa();
+int	test_strmapi();
+int	test_putchar_fd();
+int	test_putstr_fd();
+int	test_putendl_fd();
+int	test_putnbr_fd();
 
 /* Structure avec les succès/échecs des tests */
 typedef struct s_test

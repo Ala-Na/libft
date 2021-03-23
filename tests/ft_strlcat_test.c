@@ -45,22 +45,18 @@ static int	test_7()
 
 static int	test_6()
 {
-	char	*s1 = strdup("");
-	char	*s2 = strdup("");
+	char	s1[10] = "";
+	char	s2[10] = "";
 	char	*str = "Lol";
 
 	printf("Test 6 : ");
 	int i = strlcat(s1, str, 3);
 	int j = ft_strlcat(s2, str, 3);
 	if (!strcmp(s1, s2) && i == j) {
-		free(s1);
-		free(s2);
 		printf("ok\n");
 		return (0);
 	}
 	else {
-		free(s1);
-		free(s2);
 		printf("ERROR !!!\n");
 		return (1);
 	}
@@ -68,8 +64,8 @@ static int	test_6()
 
 static int	test_5()
 {
-	char	s1[42];
-	char	s2[42];
+	char	s1[42] = "AAAAAAAAAAAAAAAAAAAAAAAAAAA";
+	char	s2[42] = "AAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	char	*str = "";
 
 	printf("Test 5 : ");
@@ -88,13 +84,11 @@ static int	test_5()
 
 static int	test_4()
 {
-	char	s1[42];
-	char	s2[42];
+	char	s1[42] = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+	char	s2[42] = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	char	*str = "Strlcat is less prone error than strcat";
 
 	printf("Test 4 : ");
-	memset(s1, 'A', 42);
-	memset(s2, 'A', 42);
 	int i = strlcat(s1, str, 0);
 	int j = ft_strlcat(s2, str, 0);
 	if (!strcmp(s1, s2) && i == j) {
@@ -147,8 +141,8 @@ static int	test_2()
 
 static int	test_1()
 {
-	char	*s1 = strdup("test");
-	char	*s2 = strdup("test");
+	char	s1[200] = "test";
+	char	s2[200] = "test";
 	char	*str = "Strlcat is less prone error than strcat";
 
 	printf("Test 1 : ");
@@ -156,13 +150,9 @@ static int	test_1()
 	int j = ft_strlcat(s2, str, 8);
 	if (!strcmp(s1, s2) && i == j) {
 		printf("ok\n");
-		free(s1);
-		free(s2);
 		return (0);
 	}
 	else {
-		free(s1);
-		free(s2);
 		printf("ERROR !!!\n");
 		return (1);
 	}

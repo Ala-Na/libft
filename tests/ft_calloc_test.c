@@ -25,7 +25,7 @@ static int	test_2()
 	printf("Test 2 : ");
 	char *o_ptr = ft_calloc (0, 0);
 	char *e_ptr = calloc(0, 0);
-	if (o_ptr && !o_ptr[0] && !memcmp(o_ptr, e_ptr, 1)) {
+	if (o_ptr && !o_ptr[0] && !memcmp(o_ptr, e_ptr, 0)) {
 		free(e_ptr);
 		free(o_ptr);
 		printf("ok\n");

@@ -6,7 +6,7 @@
 /*   By: anadege <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 12:01:20 by anadege           #+#    #+#             */
-/*   Updated: 2021/03/10 11:59:56 by elanna           ###   ########.fr       */
+/*   Updated: 2021/03/23 15:41:37 by elanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static char	**ft_split_init(char const *s, char c)
 
 	i = 0;
 	occ = 0;
-	while (s[i])
+	while (s && s[i])
 	{
 		if (i == 0 && s[i] != c)
 			occ++;
@@ -65,7 +65,7 @@ char		**ft_split(char const *s, char c)
 		return (0);
 	i = -1;
 	size = 0;
-	while (s[++i])
+	while (s && s[++i])
 	{
 		start = ((i == 0 || s[i - 1] == c) ? 1 : 0);
 		if (s[i] != c && start == 1)

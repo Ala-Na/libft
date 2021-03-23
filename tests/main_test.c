@@ -1,30 +1,33 @@
 #include "tests.h"
 
 /*Macro du nombre de test et arrays avec noms des functions et functions appelées par le main*/
-#define I 24
+#define M 34
+#define B 0
 
 typedef int	(*f)(void);
 
-f test_fun[I] = {&test_memset, &test_bzero,
+f test_fun[M + B] = {&test_memset, &test_bzero,
 &test_memcpy, & test_memccpy, &test_memmove, &test_memchr,
 &test_memcmp, &test_strlen, &test_isalpha, &test_isdigit, 
 &test_isalnum, &test_isascii, &test_isprint, &test_toupper,
 &test_tolower, &test_strchr, &test_strrchr, &test_strncmp,
 &test_strlcpy, &test_strlcat, &test_strnstr, &test_atoi,
-&test_calloc, &test_strdup};
+&test_calloc, &test_strdup, &test_substr, &test_strjoin, &test_strtrim, &test_split,
+&test_itoa, &test_strmapi, &test_putchar_fd, &test_putstr_fd, &test_putendl_fd, &test_putnbr_fd};
 
-char	*names_fun[I] = {"ft_memset", "ft_bzero", "ft_memcpy", "ft_memccpy",
+char	*names_fun[M + B] = {"ft_memset", "ft_bzero", "ft_memcpy", "ft_memccpy",
 "ft_memmove", "ft_memchr", "ft_memcmp", "ft_strlen", "ft_isalpha", "ft_isdigit",
 "ft_isalnum", "ft_isascii", "ft_isprint", "ft_toupper", "ft_tolower", "ft_strchr",
 "ft_strrchr", "ft_strncmp", "ft_strlcpy", "ft_strlcat", "ft_strnstr", "ft_atoi",
-"ft_calloc", "ft_strdup"};
+"ft_calloc", "ft_strdup", "ft_substr", "ft_strjoin", "ft_strtrim", "ft_split",
+"ft_itoa", "ft_strmapi", "ft_putchar_fd", "ft_putstr_fd", "ft_putendl_fd", "ft_putnbr_fd"};
 int main(int argc, char **argv)
 {
 	int i;
 	if (argc == 2 && !strcmp(argv[1], "all")) {
 		printf("Lauching mandatory and bonus tests...\n");
 		sleep(2);
-		i = I;
+		i = M + B;
 	}
 	else if (argc == 2 && strcmp(argv[1], "all")) {
 		printf("Argument non valid.\n");
@@ -40,7 +43,7 @@ int main(int argc, char **argv)
 	else {
 		printf("Lauching only mandatory tests...\n");
 		sleep(1);
-		i = I;
+		i = M;
 	}
 	int j = 0;
 	t_test tests[i];
