@@ -47,4 +47,8 @@ fclean :	clean
 
 re :		fclean all
 
+test :		$(NAME) clean
+		gcc -Wall -Werror -Wextra ./tests/*c -L. -lft -lbsd -o test
+
+
 .PHONY: $(NAME) bonus all clean fclean re

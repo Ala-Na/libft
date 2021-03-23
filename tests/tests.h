@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <unistd.h>
 
 /* Si architecture linux et pas MAC */
 #ifdef linux
@@ -64,13 +65,6 @@ void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-/* Structure avec les succès/échecs des tests */
-typedef struct s_test
-{
-	char	*name;
-	int	res;
-}		t_test;
-
 /* Prototypes des fonctions de testes */
 int	test_memset();
 int	test_bzero();
@@ -96,5 +90,12 @@ int	test_strnstr();
 int	test_atoi();
 int	test_calloc();
 int	test_strdup();
+
+/* Structure avec les succès/échecs des tests */
+typedef struct s_test
+{
+	char	*name;
+	int	res;
+}		t_test;	
 
 #endif

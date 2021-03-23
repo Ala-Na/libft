@@ -1,83 +1,54 @@
 #include "tests.h"
 
-int main()
+/*Macro du nombre de test et arrays avec noms des functions et functions appelées par le main*/
+#define I 24
+
+typedef int	(*f)(void);
+
+f test_fun[I] = {&test_memset, &test_bzero,
+&test_memcpy, & test_memccpy, &test_memmove, &test_memchr,
+&test_memcmp, &test_strlen, &test_isalpha, &test_isdigit, 
+&test_isalnum, &test_isascii, &test_isprint, &test_toupper,
+&test_tolower, &test_strchr, &test_strrchr, &test_strncmp,
+&test_strlcpy, &test_strlcat, &test_strnstr, &test_atoi,
+&test_calloc, &test_strdup};
+
+char	*names_fun[I] = {"ft_memset", "ft_bzero", "ft_memcpy", "ft_memccpy",
+"ft_memmove", "ft_memchr", "ft_memcmp", "ft_strlen", "ft_isalpha", "ft_isdigit",
+"ft_isalnum", "ft_isascii", "ft_isprint", "ft_toupper", "ft_tolower", "ft_strchr",
+"ft_strrchr", "ft_strncmp", "ft_strlcpy", "ft_strlcat", "ft_strnstr", "ft_atoi",
+"ft_calloc", "ft_strdup"};
+int main(int argc, char **argv)
 {
-	int i = 24;
+	int i;
+	if (argc == 2 && !strcmp(argv[1], "all")) {
+		printf("Lauching mandatory and bonus tests...\n");
+		sleep(2);
+		i = I;
+	}
+	else if (argc == 2 && strcmp(argv[1], "all")) {
+		printf("Argument non valid.\n");
+		printf("Only argument taken in account is \"all\" for ");
+		printf("lauching mandatory and bonus tests.\n");
+		return (1);
+	}
+	else if (argc > 2) {
+		printf("Too many arhuments.\ni");
+		printf("Only argument taken in account is \"all\" for ");
+		printf("lauching mandatory and bonus tests.\n");
+	}
+	else {
+		printf("Lauching only mandatory tests...\n");
+		sleep(1);
+		i = I;
+	}
 	int j = 0;
 	t_test tests[i];
-
-	tests[j].name = "ft_memset";
-	tests[j].res = test_memset();
-	j++;
-	tests[j].name = "ft_bzero";
-	tests[j].res = test_bzero();
-	j++;
-	tests[j].name = "ft_memcpy";
-	tests[j].res = test_memcpy();
-	j++;
-	tests[j].name = "ft_memccpy";
-	tests[j].res = test_memccpy();
-	j++;
-	tests[j].name = "ft_memmove";
-	tests[j].res = test_memmove();
-	j++;
-	tests[j].name = "ft_memchr";
-	tests[j].res = test_memchr();
-	j++;
-	tests[j].name = "ft_memcmp";
-	tests[j].res = test_memcmp();
-	j++;
-	tests[j].name = "ft_strlen";
-	tests[j].res = test_strlen();
-	j++;
-	tests[j].name = "ft_isalpha";
-	tests[j].res = test_isalpha();
-	j++;
-	tests[j].name = "ft_isdigit";
-	tests[j].res = test_isdigit();
-	j++;
-	tests[j].name = "ft_isalnum";
-	tests[j].res = test_isalnum();
-	j++;
-	tests[j].name = "ft_isascii";
-	tests[j].res = test_isascii();
-	j++;
-	tests[j].name = "ft_isprint";
-	tests[j].res = test_isprint();
-	j++;
-	tests[j].name = "ft_toupper",
-	tests[j].res = test_toupper();
-	j++;
-	tests[j].name = "ft_tolower";
-	tests[j].res = test_tolower();
-	j++;
-	tests[j].name = "ft_strchr";
-	tests[j].res = test_strchr();
-	j++;
-	tests[j].name = "ft_strrchr";
-	tests[j].res = test_strrchr();
-	j++;
-	tests[j].name = "ft_strncmp";
-	tests[j].res = test_strncmp();
-	j++;
-	tests[j].name = "ft_strlcpy";
-	tests[j].res = test_strlcpy();
-	j++;
-	tests[j].name = "ft_strlcat";
-	tests[j].res = test_strlcat();
-	j++;
-	tests[j].name = "ft_strnstr";
-	tests[j].res = test_strnstr();
-	j++;
-	tests[j].name = "ft_atoi";
-	tests[j].res = test_atoi();
-	j++;
-	tests[j].name = "ft_calloc";
-	tests[j].res = test_calloc();
-	j++;
-	tests[j].name = "ft_strdup";
-	tests[j].res = test_strdup();
-
+	while (j < i) {
+		tests[j].name = names_fun[j];
+		tests[j].res = test_fun[j]();
+		j++;
+	}
 	j = 0;
 	while (j < i)
 	{
