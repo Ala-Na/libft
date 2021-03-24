@@ -101,6 +101,15 @@ int	test_putchar_fd();
 int	test_putstr_fd();
 int	test_putendl_fd();
 int	test_putnbr_fd();
+int	test_lstnew();
+int	test_lstadd_front();
+int	test_lstsize();
+int	test_lstlast();
+int	test_lstadd_back();
+int	test_lstdelone();
+int	test_lstclear();
+int	test_lstiter();
+int	test_lstmap();
 
 /* Structure avec les succès/échecs des tests */
 typedef struct s_test
