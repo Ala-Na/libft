@@ -47,15 +47,5 @@ fclean :	clean
 
 re :		fclean all
 
-test :		all clean
-		gcc -Wall -Werror -Wextra ./tests/*c -L. -lft -lbsd -o test
-		./test
-
-test_all :	all clean
-		gcc -Wall -Werror -Wextra ./tests/*c -L. -lft -lbsd -o test
-		./test all
-
-
-
 
 .PHONY: $(NAME) bonus all clean fclean re
