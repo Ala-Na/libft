@@ -6,7 +6,7 @@
 /*   By: anadege <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 18:44:30 by anadege           #+#    #+#             */
-/*   Updated: 2021/03/17 10:32:07 by elanna           ###   ########.fr       */
+/*   Updated: 2021/04/01 15:26:10 by elanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	while (s && *s)
 	{
 		if (*s == (char)c)
 			return ((char *)s);
