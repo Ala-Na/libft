@@ -28,7 +28,7 @@ SRC_BONUS = ./srcs/ft_lstadd_back.c  ./srcs/ft_lstadd_front.c \
 ./srcs/ft_dtoa_ope_bonus.c ./srcs/ft_dtoa_rounding_bonus.c \
 ./srcs/ft_dtoa_shortrep_bonus.c ./srcs/ft_ullitobase_bonus.c \
 ./srcs/ft_dtoa_shortrep_utils_bonus.c ./srcs/ft_print_bin_rep_bonus.c \
-./srcs/ft_dtoa_utils_bonus.c
+./srcs/ft_dtoa_utils_bonus.c ./srcs/ft_dtoa_bonus.c
 
 
 HEADER = includes
