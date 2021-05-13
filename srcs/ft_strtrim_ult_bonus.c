@@ -6,11 +6,11 @@
 /*   By: elanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 14:50:05 by elanna            #+#    #+#             */
-/*   Updated: 2021/03/24 17:15:34 by elanna           ###   ########.fr       */
+/*   Updated: 2021/05/13 15:53:47 by elanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_bonus.h"
 
 static size_t	ft_det_size(char const *s1, char const *set)
 {

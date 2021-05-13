@@ -6,7 +6,7 @@
 /*   By: anadege <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 21:40:23 by anadege           #+#    #+#             */
-/*   Updated: 2021/04/06 13:58:39 by elanna           ###   ########.fr       */
+/*   Updated: 2021/05/13 15:40:18 by elanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 # include <stdlib.h>
 # include <stddef.h>
 
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 256
-#endif
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 256
+# endif
 
 typedef struct	s_list
 {
@@ -32,7 +32,7 @@ typedef struct	s_content
 	char				*buffer;
 	int					fd;
 	struct s_content	*next;
-}				t_content;	
+}				t_content;
 
 void			*ft_memset(void *s, int c, size_t n);
 void			ft_bzero(void *s, size_t n);
@@ -78,13 +78,5 @@ void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 void (*del)(void *));
-t_content		*ft_contnew(char *buffer, int fd);
-void			ft_contadd_back(t_content **alst, t_content *new);
-void			ft_delcont(int fd, t_content **content);
-t_content		*ft_contchr_fd(t_content **lst, int fd);
-int				get_content_line(int fd, char **line, ssize_t rd,
-					t_content **cont);
-void			fill_content_struct(t_content **content, char *buffer, int fd);
-int				get_next_line(int fd, char **line);
 
 #endif

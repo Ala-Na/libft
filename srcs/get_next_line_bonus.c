@@ -6,11 +6,11 @@
 /*   By: elanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 17:01:40 by elanna            #+#    #+#             */
-/*   Updated: 2021/04/06 13:56:25 by elanna           ###   ########.fr       */
+/*   Updated: 2021/05/13 15:51:54 by elanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_bonus.h"
 
 void		ft_delcont(int fd, t_content **content)
 {

@@ -6,13 +6,13 @@
 /*   By: anadege <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 16:42:48 by anadege           #+#    #+#             */
-/*   Updated: 2021/03/24 17:16:20 by elanna           ###   ########.fr       */
+/*   Updated: 2021/05/13 15:56:16 by elanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_inside_set(char const c, char const *set)
+static int		ft_inside_set(char const c, char const *set)
 {
 	size_t	i;
 

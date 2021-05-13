@@ -18,8 +18,18 @@ SRC = ./srcs/ft_atoi.c ./srcs/ft_bzero.c ./srcs/ft_calloc.c \
 SRC_BONUS = ./srcs/ft_lstadd_back.c  ./srcs/ft_lstadd_front.c \
 ./srcs/ft_lstclear.c ./srcs/ft_lstdelone.c ./srcs/ft_lstiter.c \
 ./srcs/ft_lstlast.c ./srcs/ft_lstmap.c ./srcs/ft_lstnew.c \
-./srcs/ft_lstsize.c ./srcs/ft_strtrim_ult.c \
-./srcs/get_next_line_bonus.c ./srcs/get_next_line_utils_bonus.c
+./srcs/ft_lstsize.c ./srcs/ft_strtrim_ult_bonus.c \
+./srcs/get_next_line_bonus.c ./srcs/get_next_line_utils_bonus.c \
+./srcs/ft_bintodec_bonus.c ./srcs/ft_putchar_bonus.c \
+./srcs/ft_pow_bonus.c ./srcs/ft_uitoa_bonus.c \
+./srcs/ft_uitobase_bonus.c ./srcs/ft_hexaddr_bonus.c \
+./srcs/ft_llitoa_bonus.c ./srcs/ft_ullitoa_bonus.c \
+./srcs/ft_dtoa_exp_bonus.c ./srcs/ft_dtoa_frac_bonus.c \
+./srcs/ft_dtoa_ope_bonus.c ./srcs/ft_dtoa_rounding_bonus.c \
+./srcs/ft_dtoa_shortrep_bonus.c ./srcs/ft_ullitobase_bonus.c \
+./srcs/ft_dtoa_shortrep_utils_bonus.c ./srcs/ft_print_bin_rep_bonus.c \
+./srcs/ft_dtoa_utils_bonus.c
+
 
 HEADER = includes
 
