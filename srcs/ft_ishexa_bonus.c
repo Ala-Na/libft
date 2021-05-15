@@ -6,12 +6,12 @@
 /*   By: elanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 15:50:26 by elanna            #+#    #+#             */
-/*   Updated: 2021/05/15 16:02:47 by elanna           ###   ########.fr       */
+/*   Updated: 2021/05/15 16:05:20 by elanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Function to know if a number is under hexadecimal format (with min or maj).
+** Function to know if a char is inside an hexadecimal format (with min or maj).
 */
 
 #include "libft_bonus.h"
