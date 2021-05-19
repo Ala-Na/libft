@@ -6,7 +6,7 @@
 /*   By: elanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 16:55:13 by elanna            #+#    #+#             */
-/*   Updated: 2021/05/13 16:17:21 by elanna           ###   ########.fr       */
+/*   Updated: 2021/05/19 16:35:50 by elanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,19 @@ char	*get_int_part(unsigned long long mant, short exp)
 	return (ft_ullitoa(int_part));
 }
 
+char	*go_to_frac(char *int_part, unsigned long long mant, short exp)
+{
+	char	*frac_part;
+
+	if ((!(ft_strncmp(int_part, "-9223372036854775808", 20))
+		|| !(ft_strncmp(int_part, "9223372036854775807", 20)))
+		&& (mant < 1) == 0)
+		frac_part = get_frac_part(mant, exp);
+	else
+		frac_part = ft_strdup("0");
+	return (frac_part);
+}
+
 char	*get_dtoa_number(unsigned long long mant, short exp, int precision,
 int show_exp)
 {
@@ -75,7 +88,7 @@ int show_exp)
 		mant = mant | 0x8000000000000000;
 		int_part = get_int_part(mant, exp);
 	}
-	frac_part = get_frac_part(mant, exp);
+	frac_part = go_to_frac(int_part, mant, exp);
 	if (show_exp == 0)
 		number = get_round_number(int_part, frac_part, precision);
 	else

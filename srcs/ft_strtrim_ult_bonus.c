@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim_ult.c                                   :+:      :+:    :+:   */
+/*   ft_strtrim_ult_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 14:50:05 by elanna            #+#    #+#             */
-/*   Updated: 2021/05/13 15:53:47 by elanna           ###   ########.fr       */
+/*   Updated: 2021/05/15 17:52:05 by elanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ static void		ft_move_iterator(char const *s1, char const *set, size_t *i)
 	}
 }
 
-char			*ft_strtrim(char const *s1, char const *set)
+char			*ft_strtrim_ult(char const *s1, char const *set)
 {
 	char	*s2;
 	size_t	i;
