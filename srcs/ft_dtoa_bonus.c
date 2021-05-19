@@ -6,7 +6,7 @@
 /*   By: elanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 16:55:13 by elanna            #+#    #+#             */
-/*   Updated: 2021/05/19 16:35:50 by elanna           ###   ########.fr       */
+/*   Updated: 2021/05/19 17:23:09 by elanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ char	*go_to_frac(char *int_part, unsigned long long mant, short exp)
 	if ((!(ft_strncmp(int_part, "-9223372036854775808", 20))
 		|| !(ft_strncmp(int_part, "9223372036854775807", 20)))
 		&& (mant < 1) == 0)
-		frac_part = get_frac_part(mant, exp);
-	else
 		frac_part = ft_strdup("0");
+	else
+		frac_part = get_frac_part(mant, exp);
 	return (frac_part);
 }
 
