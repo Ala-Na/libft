@@ -6,7 +6,7 @@
 /*   By: elanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 22:06:44 by elanna            #+#    #+#             */
-/*   Updated: 2021/05/19 16:30:03 by elanna           ###   ########.fr       */
+/*   Updated: 2021/05/19 17:37:32 by elanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,8 +113,6 @@ char					*get_big_int(
 unsigned long long int_part, short exp);
 char					*get_int_part(unsigned long long mant,
 short exp);
-char					*go_to_frac(char *int_part,
-unsigned long long mant, short exp);
 char					*get_dtoa_number(
 unsigned long long mant, short exp, int precision, int show_exp);
 char					*ft_dtoa(double dbl, int precision,
