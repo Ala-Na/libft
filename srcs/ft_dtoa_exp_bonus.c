@@ -6,7 +6,7 @@
 /*   By: elanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 21:54:56 by elanna            #+#    #+#             */
-/*   Updated: 2021/05/13 15:41:48 by elanna           ###   ########.fr       */
+/*   Updated: 2021/05/20 12:19:41 by anadege          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ int limit_size)
 
 	i = 0;
 	y = 0;
-	if (!(round_number = malloc(sizeof(*round_number) * (size + 1))))
+	round_number = malloc(sizeof(*round_number) * (size + 1));
+	if (!round_number)
 	{
 		free(*number);
 		*number = NULL;

@@ -6,7 +6,7 @@
 /*   By: elanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 17:36:49 by elanna            #+#    #+#             */
-/*   Updated: 2021/05/13 15:43:10 by elanna           ###   ########.fr       */
+/*   Updated: 2021/05/20 12:34:29 by anadege          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ void	del_last_zero(char **number, int size)
 	}
 	if (i > 0 && (*number)[i] == '.')
 		nbr_zero++;
-	if (nbr_zero == 0 || !(tmp = malloc(sizeof(*tmp) * (size - nbr_zero + 1))))
+	tmp = malloc(sizeof(*tmp) * (size - nbr_zero + 1));
+	if (nbr_zero == 0 || !tmp)
 		return ;
 	i = 0;
 	while (i < (size - nbr_zero))
@@ -39,7 +40,7 @@ void	del_last_zero(char **number, int size)
 	*number = tmp;
 }
 
-int		exp_after_rounding(char **number, int exp, int precision, int int_size)
+int	exp_after_rounding(char **number, int exp, int precision, int int_size)
 {
 	int	i;
 	int	num_size;
@@ -70,7 +71,7 @@ int		exp_after_rounding(char **number, int exp, int precision, int int_size)
 
 void	adjust_precision(char *int_part, char *frac_part, int *precision)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (int_part[0] == '0')
@@ -91,7 +92,8 @@ void	adjust_number(char **number)
 	y = 0;
 	while ((*number)[i] == '0')
 		i++;
-	if (!(tmp = malloc(sizeof(*tmp) * (ft_strlen(*number) - i + 1))))
+	tmp = malloc(sizeof(*tmp) * (ft_strlen(*number) - i + 1));
+	if (!tmp)
 		return ;
 	while ((*number)[i] != 0)
 		tmp[y++] = (*number)[i++];

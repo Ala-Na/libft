@@ -6,15 +6,15 @@
 /*   By: elanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 17:16:32 by elanna            #+#    #+#             */
-/*   Updated: 2021/05/19 18:36:14 by elanna           ###   ########.fr       */
+/*   Updated: 2021/05/20 12:31:41 by anadege          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_bonus.h"
 
-void	bankers_or_usual_rounding(char **number, char **frac_part, unsigned i)
+void	bankers_or_usual_rounding(char **number, char **frac_part, unsigned int i)
 {
-	int y;
+	int	y;
 
 	y = 0;
 	if ((*frac_part)[y] >= '5' && (*frac_part)[y] <= '9')
@@ -61,7 +61,8 @@ char	*get_round_number(char *int_part, char *frac_part, int precision)
 		size = ft_strlen(int_part);
 	else
 		size = ft_strlen(int_part) + precision + 1;
-	if (!(number = malloc(sizeof(*number) * (size + 1))))
+	number = malloc(sizeof(*number) * (size + 1));
+	if (!number)
 		return (NULL);
 	number[size] = 0;
 	i = 0;

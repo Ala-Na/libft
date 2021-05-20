@@ -6,7 +6,7 @@
 /*   By: anadege <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 23:50:04 by anadege           #+#    #+#             */
-/*   Updated: 2021/03/18 23:54:47 by elanna           ###   ########.fr       */
+/*   Updated: 2021/05/20 12:12:38 by anadege          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *ret;
+	unsigned char	*ret;
 
 	ret = s;
 	while (n > 0)
