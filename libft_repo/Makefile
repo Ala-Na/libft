@@ -20,7 +20,7 @@ SRC_BONUS = ./ft_lstadd_back.c  ./ft_lstadd_front.c \
 ./ft_lstlast.c ./ft_lstmap.c ./ft_lstnew.c \
 ./ft_lstsize.c ./ft_strtrim_ult_bonus.c \
 ./get_next_line_bonus.c ./get_next_line_utils_bonus.c \
-./ft_bintodec_bonus.c ./srcs/ft_putchar_bonus.c \
+./ft_bintodec_bonus.c ./ft_putchar_bonus.c \
 ./ft_pow_bonus.c .//ft_uitoa_bonus.c \
 ./ft_uitobase_bonus.c ./ft_hexaddr_bonus.c \
 ./ft_llitoa_bonus.c ./ft_ullitoa_bonus.c \
