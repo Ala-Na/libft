@@ -6,7 +6,7 @@
 /*   By: anadege <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 16:16:47 by anadege           #+#    #+#             */
-/*   Updated: 2021/03/23 14:54:18 by elanna           ###   ########.fr       */
+/*   Updated: 2021/05/20 14:44:20 by anadege          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (ft_strdup(s1));
 	if (!s1 && !s2)
 		return (NULL);
-	while (s1[size])
+	while (s1[size] || s2[++i])
 		size++;
-	while (s2[++i])
-		size++;
-	if (!(str = malloc(sizeof(*str) * (size + 1))))
+	str = malloc(sizeof(*str) * (size + 1));
+	if (!str)
 		return (0);
 	i = 0;
 	while (*s1)

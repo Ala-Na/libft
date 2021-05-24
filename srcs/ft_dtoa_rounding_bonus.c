@@ -6,13 +6,14 @@
 /*   By: elanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 17:16:32 by elanna            #+#    #+#             */
-/*   Updated: 2021/05/20 12:31:41 by anadege          ###   ########.fr       */
+/*   Updated: 2021/05/20 13:52:57 by anadege          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_bonus.h"
 
-void	bankers_or_usual_rounding(char **number, char **frac_part, unsigned int i)
+void	bankers_or_usual_rounding(char **number, char **frac_part,
+		unsigned int i)
 {
 	int	y;
 
