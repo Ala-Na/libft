@@ -6,7 +6,7 @@
 /*   By: anadege <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 12:01:20 by anadege           #+#    #+#             */
-/*   Updated: 2021/05/24 15:12:42 by anadege          ###   ########.fr       */
+/*   Updated: 2021/05/26 10:42:20 by anadege          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 static char	**ft_split_init(char const *s, char c)
 {
-	size_t	i;
-	size_t	occ;
+	int		i;
+	int		occ;
 	char	**arr;
-	size_t	i_max;
+	int		i_max;
 
 	i = 0;
 	occ = 0;

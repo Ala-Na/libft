@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putlenstr_fd_bonus.c                            :+:      :+:    :+:   */
+/*   ft_putchar_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 17:43:47 by elanna            #+#    #+#             */
-/*   Updated: 2021/05/21 17:46:30 by elanna           ###   ########.fr       */
+/*   Created: 2021/05/12 22:33:17 by elanna            #+#    #+#             */
+/*   Updated: 2021/06/22 15:17:43 by elanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
-void	ft_putlenstr_fd(char *s, int fd, size_t len)
+void	ft_putchar(char	c)
 {
-	write(fd, s, len);
+	write(1, &c, 1);
 }

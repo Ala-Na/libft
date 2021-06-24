@@ -6,11 +6,11 @@
 /*   By: elanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 17:16:32 by elanna            #+#    #+#             */
-/*   Updated: 2021/05/20 21:15:36 by elanna           ###   ########.fr       */
+/*   Updated: 2021/06/22 15:12:20 by elanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 void	bankers_or_usual_rounding(char **number, char **frac_part,
 		unsigned int i)
@@ -25,10 +25,11 @@ void	bankers_or_usual_rounding(char **number, char **frac_part,
 		(*number)[--i] += 1;
 		while ((*number)[i] > '9')
 		{
-			(*number)[i] = '0';
+			if (i != 0)
+				(*number)[i] = '0';
 			if (i > 0 && (*number)[--i] == '.')
 				--i;
-			if ((*number)[i] == '9' && i == 0)
+			if ((*number)[i] >= '9' && i == 0)
 			{
 				(*number)[i] = '0';
 				*number = add_chars_to_mall_str(*number, "1", 'f');

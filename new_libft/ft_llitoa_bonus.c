@@ -1,60 +1,70 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ullitobase_bonus.c                              :+:      :+:    :+:   */
+/*   ft_llitoa_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/12 22:19:50 by elanna            #+#    #+#             */
-/*   Updated: 2021/05/20 15:01:04 by anadege          ###   ########.fr       */
+/*   Created: 2021/05/12 22:23:43 by elanna            #+#    #+#             */
+/*   Updated: 2021/06/22 15:14:13 by elanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Function which turn an unsigned long long into an ascii
-** string according to a given base.
-** Careful : This does not check if the base is valid (no repetitions).
+** Function which turn a long long into an ascii
+** string as it's decimal representation.
 */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
-static int	ft_det_size_ullitobase(unsigned long long n,
-unsigned long long base_size)
+static int	ft_det_size_llitoa(long long n)
 {
-	int	size;
+	int					size;
+	unsigned long long	nb;
 
 	if (n == 0)
 		return (1);
 	size = 0;
-	while (n > 0)
+	if (n < 0)
 	{
 		size++;
-		n /= base_size;
+		nb = -n;
+	}
+	else
+		nb = n;
+	while (nb > 0)
+	{
+		size++;
+		nb /= 10;
 	}
 	return (size);
 }
 
-char	*ft_ullitobase(unsigned long long n, char *base)
+char	*ft_llitoa(long long n)
 {
 	char				*arr;
-	int					i;
-	unsigned long long	base_size;
+	unsigned long long	nb;
+	unsigned long long	i;
 
-	i = 0;
-	base_size = 0;
-	while (base[i++] != '\0')
-		base_size++;
-	i = ft_det_size_ullitobase(n, base_size);
+	i = ft_det_size_llitoa(n);
 	arr = malloc(sizeof(*arr) * (i + 1));
 	if (!arr)
 		return (0);
 	arr[i] = 0;
+	nb = 0;
 	if (n == 0)
-		arr[0] = base[0];
-	while (n > 0)
+		arr[0] = '0';
+	else if (n < 0)
 	{
-		arr[--i] = base[n % base_size];
-		n /= base_size;
+		arr[0] = '-';
+		nb = n * (-1);
+	}
+	else
+		nb = n;
+	while (nb > 0)
+	{
+		arr[--i] = '0' + (nb % 10);
+		nb /= 10;
 	}
 	return (arr);
 }

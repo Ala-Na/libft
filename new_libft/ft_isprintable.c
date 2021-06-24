@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isprintable.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anadege <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: elanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/05 18:36:27 by anadege           #+#    #+#             */
-/*   Updated: 2021/05/20 14:45:05 by anadege          ###   ########.fr       */
+/*   Created: 2021/06/22 15:27:53 by elanna            #+#    #+#             */
+/*   Updated: 2021/06/22 17:25:07 by elanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+/*
+** Function to check if a string contains only printable characters.
+*/
+
+int	ft_isprintable(char *str)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (s[i])
+	while (str[i])
+	{
+		if (str[i] < ' ' || str[i] > '~')
+			return (0);
 		i++;
-	return (i);
+	}
+	return (16384);
 }

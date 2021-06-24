@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_isnumber.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/12 22:33:17 by elanna            #+#    #+#             */
-/*   Updated: 2021/05/13 15:44:57 by elanna           ###   ########.fr       */
+/*   Created: 2021/06/22 15:27:22 by elanna            #+#    #+#             */
+/*   Updated: 2021/06/22 17:24:59 by elanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
-void	ft_putchar(char c)
+/*
+** Function to check if a string contains only digits
+*/
+
+int	ft_isnumber(char *str)
 {
-	write(1, &c, 1);
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
+		i++;
+	}
+	return (2480);
 }

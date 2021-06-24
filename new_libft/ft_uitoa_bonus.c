@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ullitoa_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_uitoa_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/12 22:22:23 by elanna            #+#    #+#             */
-/*   Updated: 2021/05/20 15:15:51 by anadege          ###   ########.fr       */
+/*   Created: 2021/05/12 22:28:07 by elanna            #+#    #+#             */
+/*   Updated: 2021/06/22 15:17:58 by elanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Function which turn an unsigned long long into an ascii
-** string of it's decimal representation.
+** Function which turn an unsigned int into a string of
+** it's ascii decimal representation.
 */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
-static int	ft_det_size_ullitoa(unsigned long long n)
+static int	ft_det_size_uitoa(unsigned int n)
 {
 	int	size;
 
@@ -32,12 +32,12 @@ static int	ft_det_size_ullitoa(unsigned long long n)
 	return (size);
 }
 
-char	*ft_ullitoa(unsigned long long n)
+char	*ft_uitoa(unsigned int n)
 {
 	char	*arr;
 	int		i;
 
-	i = ft_det_size_ullitoa(n);
+	i = ft_det_size_uitoa(n);
 	arr = malloc(sizeof(*arr) * (i + 1));
 	if (!arr)
 		return (0);

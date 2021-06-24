@@ -6,11 +6,11 @@
 /*   By: elanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 16:09:43 by elanna            #+#    #+#             */
-/*   Updated: 2021/05/19 21:53:34 by elanna           ###   ########.fr       */
+/*   Updated: 2021/06/22 15:12:54 by elanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 char	*check_exp_for_format(int exp, char *int_part, char *frac_part,
 int precision)

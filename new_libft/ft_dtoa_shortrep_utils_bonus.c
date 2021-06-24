@@ -6,11 +6,11 @@
 /*   By: elanna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 17:36:49 by elanna            #+#    #+#             */
-/*   Updated: 2021/05/23 15:48:30 by elanna           ###   ########.fr       */
+/*   Updated: 2021/06/22 15:13:05 by elanna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 void	del_last_zero(char **number, int size)
 {
@@ -40,21 +40,28 @@ void	del_last_zero(char **number, int size)
 	*number = tmp;
 }
 
+static int	get_index_for_rounding_start(int precision, int int_size)
+{
+	if (int_size < precision)
+		return (precision + 1 - int_size);
+	else if (int_size == precision)
+		return (precision);
+	else
+		return (precision + 1);
+}
+
 int	exp_after_rounding(char **number, int exp, int precision, int int_size)
 {
 	int	i;
 	int	num_size;
 
-	if (int_size < precision)
-		i = precision + 1 - int_size;
-	else
-		i = precision + 1;
+	i = get_index_for_rounding_start(precision, int_size);
 	num_size = ft_strlen(*number);
 	if (i > 0 && i <= num_size)
 	{
-		if ((*number)[i] >= '5' && (*number)[i] <= '9')
+		if ((*number)[i] >= '5' && (*number)[i--] <= '9')
 		{
-			while (--i >= 0 && (*number)[i] == '9')
+			while (i >= 0 && (*number)[i] == '9')
 			{
 				if (i > 0)
 					i--;
